@@ -1,0 +1,127 @@
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" 
+        src="bower_components/angular-payments/lib/angular-payments.js">
+</script>
+<script type="text/javascript">
+// angular.module('myApp').config(function($window) {
+//     $window.Stripe.setPublishableKey('pk_test_Ahs6RHBxHZneHezwTVMgBRzu');
+// });
+// angular.module('myApp', ['angularPayments'])
+
+// // Stripe Response Handler
+// $scope.stripeCallback = function (code, result) {
+//     if (result.error) {
+//         window.alert('it failed! error: ' + result.error.message);
+//     } else {
+//         window.alert('success! token: ' + result.id);
+//     }
+// };
+// 'use strict';
+</script>
+   
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        Product Name
+      </div>
+  
+      <div class="col-md-4">
+        Product Price
+        </div>
+  
+        <div class="col-md-4">
+          Product Status 
+          </div>
+  
+    </div>
+
+
+    <div class="container" *ngIf="data">
+        <div class="row" *ngFor="let x of data; let i= index">
+          <div class="col-md-4">
+            {{x.name}}
+          </div>
+      
+          <div class="col-md-4">
+          {{x.price}}
+            </div>
+      
+            <div class="col-md-4">
+            {{x.status}}
+              </div>
+      
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4" >Total: {{total}}</div>
+          <div class="col-md-4">
+            <br>
+            <!-- <button type="button" class="btn btn-success" (click) = "handlePayment()">Bill Payment</button> -->
+          </div>
+        </div>
+  
+  </div>
+
+  <!-- <form name="checkoutForm" stripe-form="stripeCallback" ng-submit="onSubmit()" data-abide>
+
+      <div ng-if="processing" us-spinner></div>
+    
+      <fieldset>
+        <legend>Shipping Information</legend>
+    
+        <div class="row">
+    
+          <label class="large-12 columns">Name
+            <input ng-model="name" type="text" placeholder="Name">
+          </label>
+    
+          <label class="large-12 columns">Address
+            <input ng-model="address" type="text" placeholder="Address">
+          </label>
+        </div>
+      </fieldset>
+    
+      <fieldset>
+        <legend>Payment Information</legend>
+    
+        <div class="row">
+          <div class="large-6 columns" ng-class="{error: checkoutForm.number.$invalid}">
+            <label>Card Information
+              <input ng-model="number" name="number" payments-format="card" payments-validate="card"
+                     placeholder="Card Number" type="text"/>
+            </label>
+            <small class="error">Invalid card number</small>
+          </div>
+          <div class="large-3 columns" ng-class="{error: checkoutForm.expiry.$invalid}">
+            <label>Expiry
+              <input ng-model="expiry" name="expiry" payments-format="expiry" payments-validate="expiry"
+                     placeholder="Expiry" type="text"/>
+            </label>
+            <small class="error">Invalid date.</small>
+          </div>
+          <div class="large-3 columns" ng-class="{error: checkoutForm.cvc.$invalid}">
+            <label>CVC
+              <input ng-model="cvc" name="cvc" payments-format="cvc" payments-validate="cvc"
+                     placeholder="CVC" type="text"/>
+            </label>
+            <small class="error">Invalid CVC.</small>
+          </div>
+    
+          <div class="large-12 columns">
+            <strong>
+              Amount to pay: {{x.price}}$
+            </strong>
+          </div>
+        </div>
+      </fieldset>
+    
+     
+    
+      <div class="clearfix">
+        <div class="right">
+          <button class="cancel" ng-click="$dismiss();">Cancel</button>
+          <button type="submit" ng-disabled="checkoutForm.$invalid">Place Order</button>
+        </div>
+      </div>
+    
+    </form> -->

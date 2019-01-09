@@ -1,0 +1,20 @@
+<h2> Welcome to Customer Dashboard</h2>
+<h3>Offered Products</h3>
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+          <ul *ngIf="products">
+            
+            <li *ngFor="let x of products; let i= index">
+              <b> {{i+1}} </b>   
+              {{x.name}}   <a [routerLink]="['/products/'+x.id]">details</a> &nbsp;
+               <button class="btn btn-danger" 
+               (click)="Cart(x)">Add to Cart</button>
+              </li>
+              
+            </ul>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>

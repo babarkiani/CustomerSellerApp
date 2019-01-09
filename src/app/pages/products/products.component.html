@@ -1,0 +1,35 @@
+<a routerLink="/customer-dashboard"> Go back</a>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      Product Name
+    </div>
+
+    <div class="col-md-4">
+      Product Price
+      </div>
+
+      <div class="col-md-4">
+        Product Status
+        </div>
+
+  </div>
+
+  <div class="row" *ngIf="data" >
+      <div class="col-md-4">
+        {{data.name}}
+      </div>
+  
+      <div class="col-md-4" >
+       {{data.price}}
+        </div>
+  
+        <div class="col-md-4" >
+          {{data.status}}
+          </div>
+  
+    </div>
+
+</div>
+<router-outlet></router-outlet>
